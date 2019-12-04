@@ -1,7 +1,21 @@
-const initialState = {};
+import { SET_CURRENT_PAGE } from "../actions/actionTypes";
+
+const initialState = {
+  currentPage: 1,
+  pageLimit: 10,
+  userRecords: []
+};
 
 const rootReducer = (state = initialState, action) => {
-  return state;
+  switch(action.type) {
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.page
+      }
+    default:
+      return state
+  }
 }
 
 export default rootReducer;
