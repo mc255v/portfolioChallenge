@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { setCurrentPage } from "../actions/actions";
-import { fetchPageNumbers } from '../utils/helper';
+import { setCurrentPage } from "../../actions/actions";
+import { fetchPageNumbers } from '../../utils/helper';
 
 const Pagination = ({ totalRecords }) => {
   const pageLimit = useSelector(state => state.pageLimit);
@@ -15,7 +15,7 @@ const Pagination = ({ totalRecords }) => {
 
   useEffect(() => {
     setTotalPages(Math.ceil(totalRecords / pageLimit))
-  },[]);
+  },[totalRecords]);
 
   const handleClick = page => e => {
     e.preventDefault();
