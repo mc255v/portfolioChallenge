@@ -2,7 +2,8 @@ import {
   SET_CURRENT_PAGE, 
   GET_CREATORS,
   GET_USER_INFO,
-  USER_ERROR
+  USER_ERROR,
+  FILTER_WORKS
 } from "../actions/types";
 
 const initialState = {
@@ -12,6 +13,8 @@ const initialState = {
   paginationList: [],
   userProfile: null,
   userWorks: null,
+  userWorksFiltered: null,
+  categories: [],
   userError: false
 };
 
@@ -34,7 +37,16 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         userProfile: action.profile,
-        userWorks: action.works
+        userWorks: action.works,
+        categories: action.categories
+      }
+    case FILTER_WORKS:
+      const filtered = state.userWorks.filter(work => {
+        return work.category_list.includes(action.category)
+      });
+      return {
+        ...state,
+        userWorksFiltered: filtered
       }
     case USER_ERROR:
       return {

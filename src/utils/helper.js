@@ -49,3 +49,11 @@ export const fetchPageNumbers = ({ currentPage, totalPages, RIGHT_PAGE, LEFT_PAG
   return range(1, totalPages);
 
 }
+
+export const createCategories = (works) => {
+  let arr = ["All"]
+  works.forEach(work => {
+   arr = [...arr, ...work.category_list] 
+  });
+  return [...new Set(arr)];
+}

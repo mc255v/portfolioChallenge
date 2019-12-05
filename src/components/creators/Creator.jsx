@@ -16,7 +16,7 @@ const Creator = ({ creator }) => {
       <div className="creator__works">
         {creator.works.map(work => {
           return (
-            <img src={work.thumbnail} alt={work.title}/>
+            <img key={work.id} src={work.thumbnail} alt={work.title}/>
           );
         })}
       </div>

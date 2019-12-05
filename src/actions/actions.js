@@ -1,9 +1,11 @@
 import axios from 'axios';
+import { createCategories } from '../utils/helper';
 import { 
   SET_CURRENT_PAGE, 
   GET_CREATORS,
   GET_USER_INFO,
-  USER_ERROR
+  USER_ERROR,
+  FILTER_WORKS
 } from "./types";
 
 export const setCurrentPage = (page) => {
@@ -30,10 +32,12 @@ export const getUserInfo = (user) => async (dispatch) => {
   try {
     const profile = await axios.get(`https://api.foriio.com/api/v1/users/${user}/profile`);
     const works = await axios.get(`https://api.foriio.com/api/v1/users/${user}/works`);
+    const categories = createCategories(works.data.works);
     dispatch({
       type: GET_USER_INFO,
       profile: profile.data.profile, 
-      works: works.data.works
+      works: works.data.works,
+      categories
     });
   } catch (err) {
     dispatch(userError())
@@ -43,5 +47,12 @@ export const getUserInfo = (user) => async (dispatch) => {
 export const userError = () => {
   return {
     type: USER_ERROR
+  }
+}
+
+export const filterWorks = (category) => {
+  return {
+    type: FILTER_WORKS,
+    category
   }
 }
