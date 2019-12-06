@@ -1,0 +1,28 @@
+@import "../abstracts/variables.scss";
+
+.creator-list {
+  margin-top: 100px;
+
+  &__header {
+    padding-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    color: $color-grey-dark;
+  }
+
+  &__row {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey-dark;
+    }
+  }
+}

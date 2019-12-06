@@ -1,0 +1,47 @@
+@import "../abstracts/variables.scss";
+
+.creator-col {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__shape {
+    width: 10rem;
+    height: 10rem;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  &__image {
+    height: 100%;
+  }
+
+  &__info-box {
+    margin-left: .5rem;
+  }
+
+  &__profession {
+    color: $color-grey-dark;
+    margin-top: 1.5rem;
+  }
+}
+
+.creator-works {
+
+  &__image {
+    height: 12rem;
+    width: 23%;
+    border-radius: 3px;
+    box-shadow: 0 .3rem .5rem rgba(#000, .17);
+    margin-left: 1.2rem;
+    object-fit: cover;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
