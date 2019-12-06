@@ -2,7 +2,7 @@ import {
   SET_CURRENT_PAGE, 
   GET_CREATORS,
   GET_USER_INFO,
-  USER_ERROR,
+  GET_WORK,
   FILTER_WORKS
 } from "../actions/types";
 
@@ -15,7 +15,7 @@ const initialState = {
   userWorks: null,
   userWorksFiltered: null,
   categories: [],
-  userError: false
+  work: null
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -48,10 +48,10 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         userWorksFiltered: filtered
       }
-    case USER_ERROR:
+    case GET_WORK:
       return {
         ...state,
-        userError: true
+        work: action.work
       }
     default:
       return state

@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { createCategories } from '../utils/helper';
+import history from "../history";
 import { 
   SET_CURRENT_PAGE, 
   GET_CREATORS,
   GET_USER_INFO,
-  USER_ERROR,
-  FILTER_WORKS
+  FILTER_WORKS,
+  GET_WORK
 } from "./types";
 
 export const setCurrentPage = (page) => {
@@ -25,6 +26,7 @@ export const getCreators = () => async (dispatch) => {
       dispatch(setCurrentPage(1));
     } catch (err) {
       console.log(err);
+      history.push('/notfound')
     }
 }
 
@@ -40,13 +42,8 @@ export const getUserInfo = (user) => async (dispatch) => {
       categories
     });
   } catch (err) {
-    dispatch(userError())
-  }
-}
-
-export const userError = () => {
-  return {
-    type: USER_ERROR
+    console.log(err);
+    history.push('/notfound')
   }
 }
 
@@ -54,5 +51,18 @@ export const filterWorks = (category) => {
   return {
     type: FILTER_WORKS,
     category
+  }
+}
+
+export const getWork = (id) => async (dispatch) => {
+  try {
+  const res = await axios.get(`https://api.foriio.com/api/v1/works/${id}`);
+  dispatch({
+    type: GET_WORK,
+    work: res.data.work
+  })
+  } catch (err) {
+    console.log(err);
+    history.push('/notfound')
   }
 }
