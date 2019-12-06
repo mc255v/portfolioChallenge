@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCreators } from '../../actions/actions'
-import Creator from './Creator';
+import Creator from './CreatorRow';
 import Pagination from '../pagination/Pagination';
 
 const CreatersList = () => {
