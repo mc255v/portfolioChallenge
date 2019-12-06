@@ -1,13 +1,23 @@
 import React from 'react';
+import history from '../../history';
 
-const WorksDisplay = ({ works }) => {
+const ProfileWorksItem = ({ works }) => {
+  const handleClick = (id) => {
+    history.push(`/works/${id}`);
+  }
+
   return (
-    <div>
+    <div className="works-list">
       {works.map(work => {
         return (
-          <div key={work.id}>
-            <img src={work.thumbnail} alt="Creator's Work"/>
-            <p className={work.title}></p>
+          <div key={work.id} className="works-list__item">
+            <img 
+              src={work.thumbnail} 
+              alt="Creator's Work" 
+              className="works-list__image"
+              onClick={() => handleClick(work.id)}
+            />
+            <p className="">{work.title}</p>
           </div>
         );
       })}
@@ -15,4 +25,4 @@ const WorksDisplay = ({ works }) => {
   );
 }
 
-export default WorksDisplay;
+export default ProfileWorksItem;

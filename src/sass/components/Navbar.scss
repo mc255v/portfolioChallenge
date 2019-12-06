@@ -60,18 +60,4 @@
     border: 1px solid $color-search-grey;
     border-left: none;
   }
-
-  &__btn {
-    border: 1px solid $color-search-grey;
-    background-color: inherit;
-    font-size: 1.5rem;
-    padding: .8rem 3rem;
-    border-radius: 70px;
-    margin-left: 1.5rem;
-
-    &--primary {
-      background-color: $color-primary-button;
-      color: #FFF;
-    }
-  }
 }

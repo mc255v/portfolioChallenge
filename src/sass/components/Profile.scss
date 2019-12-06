@@ -1,0 +1,119 @@
+@import '../abstracts/variables.scss';
+
+.profile {
+  margin-top: 100px;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  padding: 6rem 0;
+  margin: auto;
+  width: 50%;
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    margin-right: 2rem;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
+
+    &-image {
+      height: 100%;
+      backface-visibility: hidden;
+      transition: all .5s;
+    }
+
+    &-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 20%);
+      color: #FFF;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: 0;
+      transition: all .5s;
+      backface-visibility: hidden;
+    }
+
+    &:hover &-caption {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover &-image {
+      transform: scale(1.4);
+      filter: blur(3px) brightness(80%);
+    }
+  }
+
+  &__name {
+    font-size: 3.8rem;
+    font-weight: 700;
+  }
+
+  &__wrapper {
+    display: flex;
+    color: $color-grey-dark;
+    font-size: 1.5rem;
+
+    & > * {
+      margin-right: 1rem;
+    }
+  }
+  
+  &__bio {
+    font-size: 1.3rem;
+  }
+}
+
+.works-nav {
+  margin: 3rem 0;
+
+  &__btn {
+    font-size: 1.6rem;
+    padding: .5rem 2rem;
+    border-radius: 70px;
+    margin-right: 1rem;
+
+    &--active {
+      background-color: $color-search-grey;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 23%;
+    margin: 1rem;
+
+    & p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: all .2s;
+
+    &:hover {
+      transform: translateY(-.8rem);
+      cursor: pointer;
+    }
+  }
+  
+}

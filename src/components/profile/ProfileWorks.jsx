@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterWorks } from '../../actions/actions';
-import WorksDisplay from './ProfileWorksItem';
+import ProfileWorksItem from './ProfileWorksItem';
+import Container from 'react-bootstrap/Container';
 
-const Works = () => {
+const ProfileWorks = () => {
   const dispatch = useDispatch();
   const userWorks = useSelector(state => state.userWorks);
   const userWorksFiltered = useSelector(state => state.userWorksFiltered);
@@ -11,25 +12,28 @@ const Works = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const handleClick = (category) => {
-    console.log('fired', category)
     setSelectedCategory(category);
     dispatch(filterWorks(category));
   }
 
   return (
-    <div>
-      <nav className="works__nav-container">
+    <Container>
+      <nav className="works-nav">
         {categories.map(category => {
-          return <button key={category} onClick={() => handleClick(category)}>{category}</button>
+          return <button
+            key={category} 
+            onClick={() => handleClick(category)}
+            className={`works-nav__btn ${ selectedCategory === category ? 'works-nav__btn--active' : ''}`}
+          >
+            {category}
+          </button>
         })}
       </nav>
-      <div className="works__list">
-        <WorksDisplay 
-          works={selectedCategory === "All" ? userWorks : userWorksFiltered}
-        />
-      </div>
-    </div>
+      <ProfileWorksItem 
+        works={selectedCategory === "All" ? userWorks : userWorksFiltered}
+      />
+    </Container>
   );
 }
 
-export default Works;
+export default ProfileWorks;

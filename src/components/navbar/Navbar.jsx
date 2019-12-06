@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../sass/components/Navbar.scss";
+import "../../sass/components/buttons.scss";
 
 const Navbar = () => {
   return (
@@ -13,9 +14,9 @@ const Navbar = () => {
         <button className="navbar__search-btn">Search</button>
       </div>
       <div className="navbar__right">
-        <button className="navbar__btn navbar__btn--primary">Make yours for free</button>
-        <button className="navbar__btn">Log in</button>
-        <button className="navbar__btn">EN</button>
+        <button className="button button--primary">Make yours for free</button>
+        <button className="button">Log in</button>
+        <button className="button">EN</button>
       </div>
     </nav>
   );
