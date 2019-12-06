@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentPage } from "../../actions/actions";
 import { fetchPageNumbers } from '../../utils/helper';
+import Container from 'react-bootstrap/Container';
+import '../../sass/components/Pagination.scss';
 
 const Pagination = ({ totalRecords }) => {
   const pageLimit = useSelector(state => state.pageLimit);
@@ -37,7 +39,7 @@ const Pagination = ({ totalRecords }) => {
   const pages = fetchPageNumbers({currentPage, totalPages, RIGHT_PAGE, LEFT_PAGE});
 
     return (
-      <div>
+     
         <nav className="pagination">
           <ul className="pagination__list">
             { pages.map((page, index) => {
@@ -70,7 +72,7 @@ const Pagination = ({ totalRecords }) => {
 
           </ul>
         </nav>
-      </div>
+     
     );
 }
 

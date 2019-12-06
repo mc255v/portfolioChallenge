@@ -1,0 +1,32 @@
+@import '../abstracts/variables.scss';
+
+.pagination {
+
+  &__list {
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    margin: auto;
+  }
+
+  &__item {
+    background-color: $color-search-grey;
+    padding: 1.2rem 1.8rem;
+    font-size: 1.2rem;
+    border: 1px solid #000;
+    transition: transform .1s;
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      border-right: 1px solid #000;
+    }
+
+    &--active {
+      color: $color-primary-button;
+    }
+  }
+}
