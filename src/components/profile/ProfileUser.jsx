@@ -1,5 +1,5 @@
 import React from 'react';
-import Creator from '../creators/Creator';
+import Creator from '../creators/CreatorRow';
 
 const User = ({ profile }) => {
 

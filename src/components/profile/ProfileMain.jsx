@@ -1,21 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserInfo } from '../../actions/actions';
-import NotFound from '../notfound/NotFound';
-import User from './User';
-import Works from './Works';
+import User from './ProfileUser';
+import Works from './ProfileWorks';
 
 const Profile = (props) => {
   const dispatch = useDispatch();
-  const userError = useSelector(state => state.userError)
   const userWorks = useSelector(state => state.userWorks);
   const userProfile = useSelector(state => state.userProfile);
 
   useEffect(() => {
     dispatch(getUserInfo(props.match.params.id))
   }, []);
-
-  if (userError) return <NotFound />
 
   return (
     <div className="profile__container">

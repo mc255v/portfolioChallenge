@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterWorks } from '../../actions/actions';
-import WorksDisplay from './WorksDisplay';
+import WorksDisplay from './ProfileWorksItem';
 
 const Works = () => {
   const dispatch = useDispatch();
