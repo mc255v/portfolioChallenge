@@ -1,20 +1,24 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import '../sass/components/Footer.scss';
 
 const Footer = () => {
   return (
-    <div>
-      <p>foriio <span>Portfolio made easy</span></p>
-      <div>
-        <ul>
-          <li>Terms of use</li>
-          <li>Privacy Policy</li>
-          <li>Discover</li>
-          <li>Blog</li>
-          <li>What's foriio?</li>
-        </ul>
+    <Container>
+      <div className="footer">
+        <p className="footer__title">foriio <span>Portfolio made easy</span></p>
+        <div className="footer__nav">
+          <ul className="footer__nav-list">
+            <li>Terms of use</li>
+            <li>Privacy Policy</li>
+            <li>Discover</li>
+            <li>Blog</li>
+            <li>What's foriio?</li>
+          </ul>
+        </div>
+        <p className="footer__copyright">copyright</p>
       </div>
-      <p>copyright</p>
-    </div>
+    </Container>
   );
 }
 

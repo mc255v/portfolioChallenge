@@ -1,0 +1,38 @@
+@import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
+
+.footer {
+  height: 100px;
+  color: $color-search-grey;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid $color-search-grey;
+  padding-top: 2rem;
+
+  &__title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    & span {
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__nav {
+
+    &-list {
+      list-style-type: none;
+      display: flex;
+
+      & li {
+        @include footerLink;
+      }
+    }
+  }
+
+  &__copyright {
+    @include footerLink;
+  }
+}

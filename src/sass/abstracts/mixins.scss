@@ -1,0 +1,9 @@
+@mixin footerLink {
+  margin: .8rem 1.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
