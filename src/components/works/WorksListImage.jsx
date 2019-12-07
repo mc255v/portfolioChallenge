@@ -15,8 +15,6 @@ const WorksListImage = () => {
     setShowModal(true)
   }
 
-  console.log(work)
-
   return (
     <>
     <WorksModal 

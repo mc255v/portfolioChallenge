@@ -2,12 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProfileWorksItem = ({ works }) => {
-  // const history = useHistory();
-
-  const handleClick = (id) => {
-    // history.push(`/works/${id}`);
-  }
-
   return (
     <div className="works-list">
       {works.map(work => {
@@ -17,7 +11,6 @@ const ProfileWorksItem = ({ works }) => {
               src={work.thumbnail} 
               alt="Creator's Work" 
               className="works-list__image"
-              onClick={() => handleClick(work.id)}
             />
             <p className="">{work.title}</p>
           </Link>

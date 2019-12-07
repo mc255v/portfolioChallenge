@@ -1,15 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import history from '../../history';
+import { Link } from 'react-router-dom';
 import { defaultAvatar } from '../../utils/helper';
 import "../../sass/components/shapes.scss";
 
 const WorksHeader = () => {
   const work = useSelector(state => state.work);
-
-  const handleClick = (id) => {
-    history.push(`/creator/${id}`);
-  }
 
   if (!work) return <div>test</div>
   
@@ -23,13 +19,12 @@ const WorksHeader = () => {
         {work.credits.map(credit => {
           return (
             <div key={credit.user.id} className="credit">
-              <figure 
-                className="image-circle-medium" 
-                onClick={() => handleClick(credit.user.screen_name)}
-              >
+              <Link to={`/creator/${credit.user.screen_name}`}>
+              <figure className="image-circle-medium">
                 <img src={credit.user.avatar.thumb || defaultAvatar} alt="Avatar thumb"/>
                 <figcaption>{credit.user.screen_name}</figcaption>
               </figure>
+              </Link>
               <div className="credit__inner">
                 <p className="credit__name">{credit.user.name}</p>
                 <p className="credit__role">{credit.creative_roles[0].name}</p>
