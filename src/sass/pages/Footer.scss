@@ -9,6 +9,10 @@
   border-top: 1px solid $color-search-grey;
   padding-top: 2rem;
 
+  @include lg {
+    flex-flow: row wrap;
+  }
+
   &__title {
     font-size: 2.1rem;
     font-weight: 700;
@@ -18,6 +22,10 @@
       font-size: 1.2rem;
       margin-left: 1rem;
     }
+
+    @include lg {
+      text-align: center;
+    }
   }
 
   &__nav {
@@ -25,6 +33,10 @@
     &-list {
       list-style-type: none;
       display: flex;
+
+      @include lg {
+        justify-content: space-evenly;
+      }
 
       & li {
         @include footerLink;
@@ -34,5 +46,8 @@
 
   &__copyright {
     @include footerLink;
+    @include lg {
+      text-align: center;
+    }
   }
 }

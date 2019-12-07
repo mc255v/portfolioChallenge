@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentPage } from "../../actions/actions";
 import { fetchPageNumbers } from '../../utils/helper';
-import '../../sass/components/Pagination.scss';
+import '../../sass/pages/Pagination.scss';
 
 const Pagination = ({ totalRecords }) => {
   const pageLimit = useSelector(state => state.pageLimit);

@@ -6,7 +6,7 @@ import WorksListImage from './WorksListImage';
 import WorksListVideo from './WorksListVideo';
 import Container from 'react-bootstrap/Container';
 import Loading from  '../abstracts/Loading';
-import '../../sass/components/Works.scss';
+import '../../sass/pages/Works.scss';
 
 const WorksMain = (props) => {
   const dispatch = useDispatch();

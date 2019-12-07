@@ -1,4 +1,5 @@
 @import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
 
 .profile {
   margin-top: 100px;
@@ -11,6 +12,11 @@
   margin: auto;
   width: 50%;
 
+  @include md {
+    display: initial;
+    text-align: center;
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -19,6 +25,10 @@
     clip-path: circle(50% at 50% 50%);
     position: relative;
     cursor: default;
+
+    @include md {
+      margin: auto;
+    }
 
     &-image {
       height: 100%;
@@ -61,6 +71,10 @@
     color: $color-grey-dark;
     font-size: 1.5rem;
 
+    @include md {
+      justify-content: center;
+    }
+
     & > * {
       margin-right: 1rem;
     }
@@ -74,11 +88,21 @@
 .works-nav {
   margin: 3rem 0;
 
+  @include md {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid $color-search-grey
+  }
+
   &__btn {
     font-size: 1.6rem;
     padding: .5rem 2rem;
     border-radius: 70px;
     margin-right: 1rem;
+
+    @include md {
+      margin: .3rem;
+    }
 
     &--active {
       background-color: $color-search-grey;
@@ -99,6 +123,10 @@
     width: 23%;
     margin: 1rem;
 
+    @include md {
+      width: 43%;
+    }
+
     & p {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
@@ -111,6 +139,7 @@
     object-fit: cover;
     border-radius: 3px;
     transition: all .2s;
+    box-shadow: 0 .3rem .5rem rgba(#000, .17);
 
     &:hover {
       transform: translateY(-.8rem);

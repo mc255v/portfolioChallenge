@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { defaultAvatar } from '../../utils/helper';
 import Col from 'react-bootstrap/Col';
-import '../../sass/components/CreatorRow.scss';
+import '../../sass/pages/CreatorRow.scss';
 
 const Creator = ({ creator }) => {
   return (

@@ -4,7 +4,7 @@ import { getUserInfo } from '../../actions/actions';
 import Loading from  '../abstracts/Loading';
 import ProfileUser from './ProfileUser';
 import ProfileWorks from './ProfileWorks';
-import '../../sass/components/Profile.scss';
+import '../../sass/pages/Profile.scss';
 import '../../sass/abstracts/utilities.scss';
 
 const Profile = ({ match: { params: {id}}}) => {

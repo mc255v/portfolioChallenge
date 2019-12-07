@@ -1,5 +1,7 @@
 import React from 'react';
 import { defaultAvatar } from '../../utils/helper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe, faMapMarkerAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const User = ({ profile }) => {
 
@@ -13,9 +15,9 @@ const User = ({ profile }) => {
       <div className="user__bottom">
         <h2 className="user__name u-mb-small">{profile.name}</h2>
         <div className="user__wrapper u-mb-small">
-          <p className="user__profession">{profile.profession}</p>
-          <p className="user__location">{profile.location}</p>
-          {profile.website && <div className="user__external-btn">Website Icon</div>}
+          <p className="user__profession"><FontAwesomeIcon icon={faUserCircle} /> {profile.profession}</p>
+          <p className="user__location"><FontAwesomeIcon icon={faMapMarkerAlt} /> {profile.location}</p>
+          {profile.website && <div className="user__external-btn"><FontAwesomeIcon icon={faGlobe} /></div>}
         </div>
         <p className="user__bio u-mb-small">{profile.bio}</p>
         <button className="button">Favorite</button>

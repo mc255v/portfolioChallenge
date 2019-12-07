@@ -6,9 +6,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import CreatorRow from './CreatorRow';
 import Pagination from '../pagination/Pagination';
-
-import '../../sass/components/CreatorList.scss';
 import Loading from '../abstracts/Loading';
+
+import '../../sass/pages/CreatorList.scss';
 
 const CreatersList = () => {
   const creatorsFullList = useSelector(state => state.creatorsFullList);
