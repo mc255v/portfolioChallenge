@@ -8,15 +8,27 @@ import Creator from './CreatorRow';
 import Pagination from '../pagination/Pagination';
 
 import '../../sass/components/CreatorList.scss';
+import Loading from '../abstracts/Loading';
 
 const CreatersList = () => {
   const creatorsFullList = useSelector(state => state.creatorsFullList);
   const paginationList = useSelector(state => state.paginationList);
+  const isLoading = useSelector(state => state.isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCreators());
   }, [])
+
+  const listElement = () => {
+    return paginationList.map((creator) => {
+      return  (
+        <Row key={creator.id} className="creator-list__row">
+          <Creator  creator={creator}/>
+        </Row>
+      );
+    })
+  }
 
   return (
     <div className="creator-list">
@@ -25,13 +37,7 @@ const CreatersList = () => {
           <h1 className="creator-list__title">Picked up creators</h1>
           <h3 className="creator-list__subtitle">Picked up creators</h3>
         </div>
-        {paginationList.map((creator) => {
-          return  (
-            <Row key={creator.id} className="creator-list__row">
-              <Creator  creator={creator}/>
-            </Row>
-          );
-        })}
+        {isLoading ? <Loading /> : listElement()}
         <Pagination totalRecords={creatorsFullList.length} />
       </Container>
     </div>

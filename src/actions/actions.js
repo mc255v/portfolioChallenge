@@ -6,7 +6,8 @@ import {
   GET_CREATORS,
   GET_USER_INFO,
   FILTER_WORKS,
-  GET_WORK
+  GET_WORK,
+  SET_LOADING
 } from "./types";
 
 export const setCurrentPage = (page) => {
@@ -17,11 +18,13 @@ export const setCurrentPage = (page) => {
 }
 
 export const getCreators = () => async (dispatch) => {
+    dispatch(setLoading(true));
     try {
       const res = await axios.get('https://api.foriio.com/api/v1/promoted/users');
       dispatch({
         type: GET_CREATORS,
-        creators: res.data.users
+        creators: res.data.users,
+        isLoading: false
       });
       dispatch(setCurrentPage(1));
     } catch (err) {
@@ -31,6 +34,7 @@ export const getCreators = () => async (dispatch) => {
 }
 
 export const getUserInfo = (user) => async (dispatch) => {
+  dispatch(setLoading(true));
   try {
     const profile = await axios.get(`https://api.foriio.com/api/v1/users/${user}/profile`);
     const works = await axios.get(`https://api.foriio.com/api/v1/users/${user}/works`);
@@ -39,7 +43,8 @@ export const getUserInfo = (user) => async (dispatch) => {
       type: GET_USER_INFO,
       profile: profile.data.profile, 
       works: works.data.works,
-      categories
+      categories,
+      isLoading: false
     });
   } catch (err) {
     console.log(err);
@@ -55,14 +60,23 @@ export const filterWorks = (category) => {
 }
 
 export const getWork = (id) => async (dispatch) => {
+  dispatch(setLoading(true));
   try {
   const res = await axios.get(`https://api.foriio.com/api/v1/works/${id}`);
   dispatch({
     type: GET_WORK,
-    work: res.data.work
+    work: res.data.work,
+    isLoading: false
   })
   } catch (err) {
     console.log(err);
     history.push('/notfound')
+  }
+}
+
+export const setLoading = (status) => {
+  return {
+    type: SET_LOADING,
+    status
   }
 }

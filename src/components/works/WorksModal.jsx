@@ -8,7 +8,7 @@ const WorksModal = ({ show, setShow, imageSource, title }) => {
       <Modal
         show={show}
         onHide={() => setShow(false)}
-        dialogClassName="modal-90w"
+        dialogClassName="modal-works"
         aria-labelledby="works-modal"
       >
         <Modal.Header closeButton>
@@ -17,7 +17,7 @@ const WorksModal = ({ show, setShow, imageSource, title }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={imageSource} alt={title}/>
+          <img src={imageSource} alt={title} className="modal-works__image"/>
         </Modal.Body>
       </Modal>
     </>

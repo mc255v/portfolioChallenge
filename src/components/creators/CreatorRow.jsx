@@ -1,13 +1,10 @@
 import React from 'react';
 import history from "../../history";
+import { defaultAvatar } from '../../utils/helper';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import '../../sass/components/CreatorRow.scss';
 
 const Creator = ({ creator }) => {
-  const defaultAvatar = "https://dyci7co52mbcc.cloudfront.net/static/images/default_avatar_v2.png";
-
   const creatorClick = (id) => {
     history.push(`/creator/${id}`);
   }

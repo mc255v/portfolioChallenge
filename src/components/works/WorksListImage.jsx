@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const WorksList = () => {
+const WorksListImage = () => {
   const work = useSelector(state => state.work);
   const [showModal, setShowModal] = useState(false);
   const [currentImg, setCurrentImg] = useState();
@@ -15,7 +15,7 @@ const WorksList = () => {
     setShowModal(true)
   }
 
-  if (!work) return <div>test</div>
+  console.log(work)
 
   return (
     <>
@@ -25,19 +25,28 @@ const WorksList = () => {
       imageSource={currentImg}
       title={work.title}
     />
+    <div className="list">
     <Container>
       <Row>
         {work.images.map(image => {
           return (
-            <Col key={image.id} onClick={() => handleClick(image.urls.detail2x)}>
+            <div
+              key={image.id} 
+              className="list__item"
+              onClick={() => handleClick(image.urls.detail2x)}
+            >
               <img src={image.urls.detail} alt="Work Display"/>
-            </Col>
+              <div className="list__item--view">
+                <p>view</p>
+              </div>
+            </div>
           )
         })}
       </Row>
     </Container>
+    </div>
     </>
   );
 }
 
-export default WorksList;
+export default WorksListImage;

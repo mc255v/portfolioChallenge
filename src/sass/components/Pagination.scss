@@ -27,7 +27,9 @@
     }
 
     &--active {
+      background-color: #FFF;
       color: $color-primary-button;
+      font-weight: 700;
     }
   }
 }

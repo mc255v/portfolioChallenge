@@ -3,7 +3,8 @@ import {
   GET_CREATORS,
   GET_USER_INFO,
   GET_WORK,
-  FILTER_WORKS
+  FILTER_WORKS,
+  SET_LOADING
 } from "../actions/types";
 
 const initialState = {
@@ -15,7 +16,8 @@ const initialState = {
   userWorks: null,
   userWorksFiltered: null,
   categories: [],
-  work: null
+  work: null,
+  isLoading: true
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -31,14 +33,16 @@ const rootReducer = (state = initialState, action) => {
     case GET_CREATORS:
       return {
         ...state,
-        creatorsFullList: action.creators
+        creatorsFullList: action.creators,
+        isLoading: action.isLoading
       }
     case GET_USER_INFO:
       return {
         ...state,
         userProfile: action.profile,
         userWorks: action.works,
-        categories: action.categories
+        categories: action.categories,
+        isLoading: action.isLoading
       }
     case FILTER_WORKS:
       const filtered = state.userWorks.filter(work => {
@@ -51,8 +55,15 @@ const rootReducer = (state = initialState, action) => {
     case GET_WORK:
       return {
         ...state,
-        work: action.work
+        work: action.work,
+        isLoading: action.isLoading
       }
+    case SET_LOADING: {
+      return {
+        ...state,
+        isLoading: action.status
+      }
+    }
     default:
       return state
   }

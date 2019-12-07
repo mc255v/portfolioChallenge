@@ -18,6 +18,7 @@
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     position: relative;
+    cursor: default;
 
     &-image {
       height: 100%;
@@ -92,6 +93,7 @@
 .works-list {
   display: flex;
   flex-wrap: wrap;
+  min-height: 40rem;
 
   &__item {
     width: 23%;

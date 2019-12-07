@@ -6,6 +6,8 @@ const range = (from, to) => {
   return range;
 }
 
+export const defaultAvatar = "https://dyci7co52mbcc.cloudfront.net/static/images/default_avatar_v2.png";
+
 export const fetchPageNumbers = ({ currentPage, totalPages, RIGHT_PAGE, LEFT_PAGE }) => {
   const totalBlocks = 7;
 

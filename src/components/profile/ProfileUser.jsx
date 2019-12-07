@@ -1,11 +1,12 @@
 import React from 'react';
+import { defaultAvatar } from '../../utils/helper';
 
 const User = ({ profile }) => {
 
   return (
     <div className="user">
       <figure className="user__shape u-mt-small">
-        <img src={profile.avatar.thumb2x} alt="User Avatar" className="user__shape-image"/>
+        <img src={profile.avatar.thumb2x || defaultAvatar} alt="User Avatar" className="user__shape-image"/>
         <figcaption className="user__shape-caption">{profile.user.screen_name}</figcaption>
       </figure>
       

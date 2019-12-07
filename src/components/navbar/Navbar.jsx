@@ -1,12 +1,17 @@
 import React from 'react';
+import history from '../../history';
 import "../../sass/components/Navbar.scss";
 import "../../sass/components/buttons.scss";
 
 const Navbar = () => {
+  const goHome = () => {
+    history.push('/');
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar__left">
-        <div className="navbar__logo">foriio</div>
+        <div className="navbar__logo" onClick={() => goHome()}>foriio</div>
         <div className="navbar__search-select">
           <p>Creators</p>
         </div>

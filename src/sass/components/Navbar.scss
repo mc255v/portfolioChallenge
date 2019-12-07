@@ -19,6 +19,7 @@
     font-weight: 700;
     padding-right: 1.5rem;
     border-right: 1px solid $color-search-grey;
+    cursor: pointer;
   }
 
   &__search-select {
@@ -29,6 +30,7 @@
     border-radius: 70px 0 0 70px;
     border: 1px solid $color-search-grey;
     border-right: none;
+    cursor: pointer;
 
     & p {
       margin-top: .6rem;
