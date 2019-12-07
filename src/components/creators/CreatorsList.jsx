@@ -4,7 +4,7 @@ import { getCreators } from '../../actions/actions'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Creator from './CreatorRow';
+import CreatorRow from './CreatorRow';
 import Pagination from '../pagination/Pagination';
 
 import '../../sass/components/CreatorList.scss';
@@ -13,7 +13,6 @@ import Loading from '../abstracts/Loading';
 const CreatersList = () => {
   const creatorsFullList = useSelector(state => state.creatorsFullList);
   const paginationList = useSelector(state => state.paginationList);
-  const isLoading = useSelector(state => state.isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const CreatersList = () => {
     return paginationList.map((creator) => {
       return  (
         <Row key={creator.id} className="creator-list__row">
-          <Creator  creator={creator}/>
+          <CreatorRow  creator={creator}/>
         </Row>
       );
     })
@@ -37,7 +36,7 @@ const CreatersList = () => {
           <h1 className="creator-list__title">Picked up creators</h1>
           <h3 className="creator-list__subtitle">Picked up creators</h3>
         </div>
-        {isLoading ? <Loading /> : listElement()}
+        {!paginationList ? <Loading /> : listElement()}
         <Pagination totalRecords={creatorsFullList.length} />
       </Container>
     </div>

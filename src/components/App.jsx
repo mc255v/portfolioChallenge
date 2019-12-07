@@ -1,6 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
-import history from '../history';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './navbar/Navbar';
 import CreatorsList from './creators/CreatorsList';
 import Profile from './profile/ProfileMain';
@@ -11,7 +10,7 @@ import Footer from '../footer/Footer';
 const App = () => {
   return (
     <div className="App">
-      <Router history={history}>
+      <BrowserRouter>
         <Navbar />
         <Switch>
           <Route exact path="/" component={CreatorsList} />
@@ -20,7 +19,7 @@ const App = () => {
           <Route path="/notfound" component={NotFound} />
         </Switch>
         <Footer />
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

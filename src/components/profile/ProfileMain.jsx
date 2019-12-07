@@ -7,16 +7,16 @@ import ProfileWorks from './ProfileWorks';
 import '../../sass/components/Profile.scss';
 import '../../sass/abstracts/utilities.scss';
 
-const Profile = (props) => {
+const Profile = ({ match: { params: {id}}}) => {
   const dispatch = useDispatch();
   const userProfile = useSelector(state => state.userProfile);
   const isLoading = useSelector(state => state.isLoading);
 
   useEffect(() => {
-    dispatch(getUserInfo(props.match.params.id))
+    dispatch(getUserInfo(id))
   }, []);
-
-  if (isLoading) return <Loading />
+  
+  if (!userProfile || isLoading) return <Loading />
 
   return (
     <div className="profile">

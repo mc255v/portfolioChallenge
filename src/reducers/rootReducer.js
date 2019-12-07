@@ -11,7 +11,7 @@ const initialState = {
   currentPage: 1,
   pageLimit: 10,
   creatorsFullList: [],
-  paginationList: [],
+  paginationList: null,
   userProfile: null,
   userWorks: null,
   userWorksFiltered: null,

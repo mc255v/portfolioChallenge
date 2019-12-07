@@ -24,7 +24,7 @@ const Creator = ({ creator }) => {
       <div className="creator-works">
         {creator.works.map(work => {
           return (
-            <Link to={`/works/${work.id}`}>
+            <Link key={work.id} to={`/works/${work.id}`}>
             <img 
               key={work.id} 
               src={work.thumbnail} 

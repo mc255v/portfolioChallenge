@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import WorksModal from './WorksModal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 const WorksListImage = () => {
   const work = useSelector(state => state.work);
