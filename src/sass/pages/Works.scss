@@ -1,4 +1,5 @@
 @import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
 
 .works-page {
   margin-top: 100px;
@@ -29,6 +30,10 @@
   margin-bottom: 10rem;
   position: relative;
 
+  @include lg {
+    width: 100%;
+  }
+
   &__title {
     font-size: 2rem;
     padding: 0 .5rem;
@@ -43,12 +48,20 @@
   &__inner {
     display: flex;
     justify-content: space-around;
+
+    @include md {
+      display: initial;
+    }
   }
 }
 
 .credit {
   display: flex;
   margin-top: 1.5rem;
+
+  @include lg {
+    margin-left: 2rem;
+  }
 
   &__inner {
     margin-left: 1.5rem;
@@ -71,12 +84,21 @@
   background-color: #F8F9FA;
   padding: 15rem 0;
 
+  @include md {
+    padding: 5rem;
+  }
+
   &__item {
     width: 25%;
     height: 20rem;
     margin: 3rem;
     position: relative;
     cursor: pointer;
+
+    @include md {
+      width: 100%;
+      margin: 2rem 0;
+    }
 
     & > img {
       width: 100%;
@@ -115,12 +137,23 @@
     width: 46%;
     height: 30rem;
     margin: 2rem;
+
+    @include md {
+      width: 100%;
+      height: auto;
+      margin: 2rem 0;
+    }
   }
 }
 
 .modal-works {
   width: 85%;
   max-width: 85%;
+
+  @include lg {
+    width: 97%;
+    max-width: 98%;
+  }
 
   &__image {
     width: 100%;

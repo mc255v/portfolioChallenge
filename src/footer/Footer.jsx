@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import '../sass/pages/Footer.scss';
 
@@ -6,7 +7,7 @@ const Footer = () => {
   return (
     <Container>
       <div className="footer">
-        <p className="footer__title">foriio <span>Portfolio made easy</span></p>
+        <Link to="/" className="footer__title">foriio <span>Portfolio made easy</span></Link>
         <div className="footer__nav">
           <ul className="footer__nav-list">
             <li>Terms of use</li>
