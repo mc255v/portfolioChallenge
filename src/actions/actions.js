@@ -29,7 +29,6 @@ export const getCreators = () => async (dispatch) => {
       });
       dispatch(setCurrentPage(1));
     } catch (err) {
-      console.log(err);
       history.push('/notfound')
     }
 }
@@ -52,7 +51,6 @@ export const getUserInfo = (user) => async (dispatch) => {
       isLoading: false
     });
   } catch (err) {
-    console.log(err);
     history.push('/notfound')
   }
 }
@@ -74,7 +72,6 @@ export const getWork = (id) => async (dispatch) => {
     isLoading: false
   })
   } catch (err) {
-    console.log(err);
     history.push('/notfound')
   }
 }
