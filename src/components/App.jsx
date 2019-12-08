@@ -16,7 +16,7 @@ const App = () => {
           <Route exact path="/" component={CreatorsList} />
           <Route path="/creator/:id" component={Profile} />
           <Route path="/works/:id" component={WorksMain} />
-          <Route path="/notfound" component={NotFound} />
+          <Route component={NotFound} />
         </Switch>
         <Footer />
       </BrowserRouter>
