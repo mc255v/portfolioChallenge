@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+This application was bootstrapped with create-react-app. 
 
-### `yarn start`
+This command will start the development server and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+  $ yarn start
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To build for deployment, please use:
+```bash
+  $ yarn build
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This command will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into the project so you have full control over them.
+```bash
+  $ yarn eject
+```
 
-### `yarn test`
+## Testing
+This application uses Jest / Enzyme for testing. To run those tests, please use:
+```bash
+  $ yarn test 
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technical Implementation Details
+- **React** - React was used in this application, integrated with react-redux. All components are implemented as functional components, with component state handled by redux and local state is only used in cases where it makes sense.
 
-### `yarn build`
+- **Redux / State Management / Redux-Thunk** - As mentioned above, Redux is used for component state management. Redux-Thunk is used for asynchronous actions (data fetching, mainly). 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Styling** - This application implements the BEM pattern in SCSS, with separate SCSS files for each main component folder. Boostrap was used as quick implementation for a Modal in place of creating one from scratch with a portal. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- **Testing** - The tests implemented in this app focus on rendering, interactions and Redux using Jest and Enzyme. All actions were tested, but due to time constraints, only one part of the reducer, and one component was tested.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Assumptions / Additional Notes
+Unfortunately due to time constraints I wasn't able to implement SSR or a browsing history page (works, creators, etc). I was planning to implement a fuzzy search as well. The "Need to have" section was completed.
+I attempted to duplicate the orignal source as best as possible within my time constraints and only deviated when neccesary for quicker implementation.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ 
