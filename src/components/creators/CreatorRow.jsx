@@ -13,10 +13,12 @@ const Creator = ({ creator }) => {
             <img src={creator.avatar || defaultAvatar} alt="avatar" className="creator-col__image"/>
           </figure>
           </Link>
+          <Link to={`/creator/${creator.screen_name}`}>
           <div className="creator-col__info-box">
             <p className="creator-col__profession">{creator.profession}</p>
             <p className="creator-col__name">{creator.name}</p>
           </div>
+          </Link>
         </div>
       </Col>
       <Col>
