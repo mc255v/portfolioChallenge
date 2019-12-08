@@ -8,9 +8,9 @@ import CreatorRow from './CreatorRow';
 import Pagination from '../pagination/Pagination';
 import Loading from '../abstracts/Loading';
 
-import '../../sass/pages/CreatorList.scss';
+import '../../sass/pages/Creators.scss';
 
-const CreatersList = () => {
+const CreatorsList = () => {
   const creatorsFullList = useSelector(state => state.creatorsFullList);
   const paginationList = useSelector(state => state.paginationList);
   const dispatch = useDispatch();
@@ -20,13 +20,11 @@ const CreatersList = () => {
   }, [])
 
   const listElement = () => {
-    return paginationList.map((creator) => {
-      return  (
+    return paginationList.map((creator) => (
         <Row key={creator.id} className="creator-list__row">
           <CreatorRow  creator={creator}/>
         </Row>
-      );
-    })
+    ));
   }
 
   return (
@@ -43,4 +41,4 @@ const CreatersList = () => {
   );
 }
 
-export default CreatersList;
+export default CreatorsList;

@@ -29,9 +29,7 @@ const WorksListVideo = () => {
     <div className="list">
       <Container>
           <Row>
-            {work.videos.map(video => {
-              return videoType(video);
-            })}
+            {work.videos.map(video => videoType(video))}
           </Row>
       </Container>
     </div>

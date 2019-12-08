@@ -19,15 +19,15 @@ const ProfileWorks = () => {
   return (
     <Container>
       <nav className="works-nav">
-        {categories.map(category => {
-          return <button
+        {categories.map(category => (
+          <button
             key={category} 
             onClick={() => handleClick(category)}
             className={`works-nav__btn ${ selectedCategory === category ? 'works-nav__btn--active' : ''}`}
           >
             {category}
           </button>
-        })}
+        ))}
       </nav>
       <ProfileWorksItem 
         works={selectedCategory === "All" ? userWorks : userWorksFiltered}

@@ -25,20 +25,18 @@ const WorksListImage = () => {
     <div className="list">
     <Container>
       <Row>
-        {work.images.map(image => {
-          return (
-            <div
-              key={image.id} 
-              className="list__item"
-              onClick={() => handleClick(image.urls.detail2x)}
-            >
-              <img src={image.urls.detail} alt="Work Display"/>
-              <div className="list__item--view">
-                <p>view</p>
-              </div>
+        {work.images.map(image => (
+          <div
+            key={image.id} 
+            className="list__item"
+            onClick={() => handleClick(image.urls.detail)}
+          >
+            <img src={image.urls.detail} alt="Work Display"/>
+            <div className="list__item--view">
+              <p>view</p>
             </div>
-          )
-        })}
+          </div>
+        ))}
       </Row>
     </Container>
     </div>
