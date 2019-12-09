@@ -5,7 +5,7 @@ import CreatorsList from './creators/CreatorsList';
 import Profile from './profile/ProfileMain';
 import WorksMain from './works/WorksMain';
 import NotFound from './abstracts/NotFound';
-import Footer from '../footer/Footer';
+import Footer from './footer/Footer';
 
 const App = () => {
   return (
